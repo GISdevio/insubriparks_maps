@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>INSUBRIPARKS Sample Map</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<!-- İmports Leaflet -->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+		integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+		crossorigin=""/>
+		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+		integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+		crossorigin=""></script>
+
+		<!-- Add Wifi Data as Layer -->
+		<script src="assets/js/areoporti.js" type="text/javascript"></script>
+		<script src="assets/js/stazioni.js" type="text/javascript"></script>
+		<script src="assets/js/aree_parco_semplificate.js" type="text/javascript"></script>
+
+	</head>
+	<body>
+		<div id="mapid"></div>
+
+		<!-- Scripts -->
+			<script>
+				
+				/* Adds Open Street Map And Street, Satellite, Dark*/
+				var attrib = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+				
+				var OpenStreetMap_Mapnik = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+					maxZoom: 19,
+					attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+				});
+
+				var attrib = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>'
+				token = 'pk.eyJ1IjoidGVvanV2ZTkzIiwiYSI6ImNqaDh4d3ZwaTA4YTMzNW82Y2RmdXB1eGMifQ.IXhtJ-tsQl86u2Lhlnzn_w'
+				var dark = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+					attribution: attrib,
+					maxZoom: 18,
+					id: 'mapbox/dark-v10',
+					accessToken: token
+				});
+
+				var light = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+					attribution: attrib,
+					maxZoom: 18,
+					id: 'mapbox/light-v10',
+					accessToken: token
+				});
+					
+
+				// Airport Icon
+				var airportIcon = L.icon({
+        			iconUrl: 'assets/images/airport.svg',
+        			iconSize: [38, 95], // size of the icon
+				});
+				
+				// Train Station Icon
+				var trainIcon = L.icon({
+        			iconUrl: 'assets/images/train.svg',
+        			iconSize: [38, 95], // size of the icon
+				});				
+				
+				// Parks Style
+				var parksStyle = {
+					"color": "#228B22",
+					"weight": 3,
+				};
+	
+				/* Read Airports Layers From GeoJSON File (airports.js)*/
+				var aereolayer = L.geoJSON(areoporti, {
+					pointToLayer: function (feature, latlng) {
+						return L.marker(latlng, {icon: airportIcon})
+					},
+					onEachFeature: function(feature, layer) {
+						layer.bindPopup('<h3>'+feature.properties.nome+'</h3>');
+					}
+					
+				});
+
+				/* Read Train Stations Layers From GeoJSON File (stazioni.js)*/
+				var trainlayer = L.geoJSON(stazioni, {
+					pointToLayer: function (feature, latlng) {
+						return L.marker(latlng, {icon: trainIcon})
+					},
+					onEachFeature: function(feature, layer) {
+						layer.bindPopup('<h3> Stazione '+feature.properties.nome+'</h3>');
+					}
+					
+				});				
+
+				/* Read Parks Layers From GeoJSON File (parks.js)*/
+				var parkslayer = L.geoJSON(areeParcoSemplificate, {
+						onEachFeature: function(feature, layer) {
+						layer.bindPopup('<h3>'+feature.properties.nome+'</h3>');
+					},
+						style: parksStyle
+					
+				});						
+
+
+				/*Defines The Basemap and OverlayMaps List*/
+				var baseMaps = {
+					"OSM": OpenStreetMap_Mapnik,
+					"Light": light,
+					"Dark": dark		
+				};
+				var overlayMaps = {
+					"Airports": aereolayer,
+					"Train Stations": trainlayer,
+					"Parks": parkslayer
+				};
+
+				/* Defines the Current Map situation When User First Opened The Page*/
+				var map = L.map('mapid', {
+					center: [45.717325, 9.193786],
+					zoom: 9.45,
+					minZoom: 8,
+					layers: [light, aereolayer, trainlayer, parkslayer]
+				});
+
+				/* Adds The Control Button For Layers */
+				L.control.layers(baseMaps, overlayMaps).addTo(map);
+
+								
+				var LeafIcon = L.Icon.extend({
+					options: {
+						shadowUrl: 'leaf-shadow.png',
+						iconSize:     [38, 95],
+						shadowSize:   [50, 64],
+						iconAnchor:   [22, 94],
+						shadowAnchor: [4, 62],
+						popupAnchor:  [-3, -76]
+					}
+				});
+
+			</script>
+
+	</body>
+</html>
