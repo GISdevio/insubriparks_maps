@@ -8,12 +8,6 @@ La principale dipendenza è ZoomMarker. Si tratta di un plugin di jQuery per ges
 [ZoomMarker](https://github.com/NoticeVengus/ZoomMarker).
 
 
-## Preview
-An example with basic usages
-
-![image-1.png](./image-1.png)
-
-
 ## Version
 
 | version  | date | detail        | 
