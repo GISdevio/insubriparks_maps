@@ -9,7 +9,10 @@ La principale dipendenza è ZoomMarker. Si tratta di un plugin di jQuery per ges
 
 
 ## Preview
-immagine for an example with basic usages.
+An example with basic usages
+
+![image-1.png](./image-1.png)
+
 
 ## Version
 
@@ -27,8 +30,8 @@ immagine for an example with basic usages.
 
 
 ## Usages
-Nessuna particolare istruzione se non quella di utilizzare index.html in una qualsiasi altra Web Application dove
+Nessuna particolare istruzione se non quella di utilizzare **index.html** in una qualsiasi altra Web Application dove
 si vuole integrare questa tipologia di mapping statico.
 
-Viene messo a disposizione un config.js all'interno del quale è possibile cambiare o aggiungere qualsiasi informazione 
+Viene messo a disposizione un **config.js** all'interno del quale è possibile cambiare o aggiungere qualsiasi informazione 
 senza dover andare a riscrivere codice.
