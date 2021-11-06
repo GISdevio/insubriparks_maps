@@ -26,50 +26,246 @@
 <script>
 
     /******************** INIT ZoomMarker here *****************************/
+    // TODO: Creare immagine con nomi parki già inseriti e poi aggiungere il resto tramite icons
     $(document).ready(function () {
 
         $('#zoom-marker-img-alt').zoomMarker({
             src: "assets/img/" + appConfig.basemapImage,
             rate: 0.2,
             width: 600,
-            max: 600,
-            min: 600,
+            max: 500,
+            min: 500,
             enable_drag: false,
             zoom_lock: true,
             move_limit: true,
             markers:[
+                // ---------------------------- Parks Marker ------------------------------------------
                 {
-                    src:"assets/img/" + appConfig.parkMarker,
-                    x:300,
-                    y:300,
-                    size: 40,
-                    dialog:{
+                    src:"assets/img/" + appConfig.parks.pineta.marker,
+                    x:1850,
+                    y:1950,
+                    size: 50,
+/*                    dialog:{
                         value: appConfig.parks.pineta.nome,
                         style: appConfig.parks.style
-                    },
-
+                    },*/
                     draggable: false
                     //hint:{value:'M', style:{color:"green", left:"12px"}}
                 },                {
-                    src:"assets/img/parkMarker.svg",
-                    x:750,
-                    y:250,
+                    src:"assets/img/" + appConfig.parks.spinaVerde.marker,
+                    x:2350,
+                    y:1500,
+                    size: 50,
+                    draggable: false
+                    //hint:{value:'M', style:{color:"green", left:"12px"}}
+                },{
+                    src:"assets/img/" + appConfig.parks.gole.marker,
+                    x:2400,
+                    y:1000,
+                    size: 50,
+                    draggable: false
+                    //hint:{value:'M', style:{color:"green", left:"12px"}}
+                },{
+                    src:"assets/img/" + appConfig.parks.campo.marker,
+                    x:1080,
+                    y:1200,
+                    size: 50,
+                    draggable: false
+                    //hint:{value:'M', style:{color:"green", left:"12px"}}
+                },{
+                    src:"assets/img/" + appConfig.parks.penz.marker,
+                    x:2000,
+                    y:1150,
+                    size: 50,
+                    draggable: false
+                    //hint:{value:'M', style:{color:"green", left:"12px"}}
+                },
+
+                // ---------------------------- Railway Stations Marker ------------------------------------------
+                {
+                    src:"assets/img/" + appConfig.stazioni.como1.marker,
+                    x:2809,
+                    y:1366,
+                    size: 18,
+                    dialog:{
+                        value: appConfig.stazioni.como1.nome,
+                        style: appConfig.stazioni.style
+                    },
+                    draggable: false
+                    //hint:{value:'M', style:{color:"green", left:"12px"}}
+                },
+                {
+                    src:"assets/img/" + appConfig.stazioni.como2.marker,
+                    x:2709,
+                    y:1406,
+                    size: 18,
+                    dialog:{
+                        value: appConfig.stazioni.como2.nome,
+                        style: appConfig.stazioni.style
+                    },
+                    draggable: false
+                    //hint:{value:'M', style:{color:"green", left:"12px"}}
+                },
+                {
+                    src:"assets/img/" + appConfig.stazioni.gole.marker,
+                    x:2219,
+                    y:1082,
+                    size: 18,
+                    dialog:{
+                        value: appConfig.stazioni.gole.nome,
+                        style: appConfig.stazioni.style
+                    },
+                    draggable: false
+                    //hint:{value:'M', style:{color:"green", left:"12px"}}
+                },
+                {
+                    src:"assets/img/" + appConfig.stazioni.pineta.marker,
+                    x:1650,
+                    y:2030,
+                    size: 18,
+                    dialog:{
+                        value: appConfig.stazioni.pineta.nome,
+                        style: appConfig.stazioni.style
+                    },
+                    draggable: false
+                    //hint:{value:'M', style:{color:"green", left:"12px"}}
+                },
+                {
+                    src:"assets/img/" + appConfig.stazioni.varese1.marker,
+                    x:1349,
+                    y:1602,
+                    size: 18,
+                    dialog:{
+                        value: appConfig.stazioni.varese1.nome,
+                        style: appConfig.stazioni.style
+                    },
+                    draggable: false
+                    //hint:{value:'M', style:{color:"green", left:"12px"}}
+                },
+                {
+                    src:"assets/img/" + appConfig.stazioni.varese2.marker,
+                    x:1269,
+                    y:1652,
+                    size: 18,
+                    dialog:{
+                        value: appConfig.stazioni.varese2.nome,
+                        style: appConfig.stazioni.style
+                    },
+                    draggable: false
+                    //hint:{value:'M', style:{color:"green", left:"12px"}}
+                },
+
+                // ---------------------------- Airports Marker ------------------------------------------
+                {
+                    src:"assets/img/" + appConfig.aereoporti.lugano.marker,
+                    x:1630,
+                    y:378,
+                    size: 60,
+                    dialog:{
+                        value: appConfig.aereoporti.lugano.nome,
+                        style: appConfig.aereoporti.style
+                    },
+                    draggable: false
+                    //hint:{value:'M', style:{color:"green", left:"12px"}}
+                }, {
+                    src:"assets/img/" + appConfig.aereoporti.linate.marker,
+                    x:3009,
+                    y:2515,
+                    size: 60,
+                    dialog:{
+                        value: appConfig.aereoporti.linate.nome,
+                        style: appConfig.aereoporti.style
+                    },
+                    draggable: false
+                    //hint:{value:'M', style:{color:"green", left:"12px"}}
+                }, {
+                    src:"assets/img/" + appConfig.aereoporti.malpensa.marker,
+                    x:509,
+                    y:2515,
+                    size: 60,
+                    dialog:{
+                        value: appConfig.aereoporti.malpensa.nome,
+                        style: appConfig.aereoporti.style
+                    },
+                    draggable: false
+                    //hint:{value:'M', style:{color:"green", left:"12px"}}
+                },
+
+                // ---------------------------- Cities Marker ------------------------------------------
+                {
+                    src:"assets/img/" + appConfig.comuni.lugano.marker,
+                    x:1930,
+                    y:548,
+                    size: 100,
+                    dialog:{
+                        value: appConfig.comuni.lugano.nome,
+                        style: appConfig.comuni.style
+                    },
+                    draggable: false
+                    //hint:{value:'M', style:{color:"green", left:"12px"}}
+                },
+                {
+                    src:"assets/img/" + appConfig.comuni.mendrisio.marker,
+                    x:2130,
+                    y:738,
                     size: 40,
                     dialog:{
-                        value: appConfig.parks.spinaVerde.nome,
-                        style: appConfig.parks.style
+                        value: appConfig.comuni.mendrisio.nome,
+                        style: appConfig.comuni.style
+                    },
+                    draggable: false
+                    //hint:{value:'M', style:{color:"green", left:"12px"}}
+                },
+                {
+                    src:"assets/img/" + appConfig.comuni.como.marker,
+                    x:2930,
+                    y:1478,
+                    size: 40,
+                    dialog:{
+                        value: appConfig.comuni.como.nome,
+                        style: appConfig.comuni.style
+                    },
+                    draggable: false
+                    //hint:{value:'M', style:{color:"green", left:"12px"}}
+                },
+                {
+                    src:"assets/img/" + appConfig.comuni.varese.marker,
+                    x:1289,
+                    y:1502,
+                    size: 40,
+                    dialog:{
+                        value: appConfig.comuni.varese.nome,
+                        style: appConfig.comuni.style
+                    },
+                    draggable: false
+                    //hint:{value:'M', style:{color:"green", left:"12px"}}
+                },
+                {
+                    src:"assets/img/" + appConfig.comuni.milano.marker,
+                    x:2509,
+                    y:2525,
+                    size: 100,
+                    dialog:{
+                        value: appConfig.comuni.milano.nome,
+                        style: appConfig.comuni.style
                     },
                     draggable: false
                     //hint:{value:'M', style:{color:"green", left:"12px"}}
                 }
+
             ]
         });
     })
 
     $('#zoom-marker-img-alt').on("zoom_marker_click", function(event, marker){
-        switch (marker.param.dialog.value){
-            case appConfig.parks.spinaVerde.nome: window.open(appConfig.parks.spinaVerde.url, '_blank');
-            case appConfig.parks.pineta.nome: window.open(appConfig.parks.pineta.url, '_blank');
+        let basePath = "assets/img/";
+        switch (marker.param.src){
+            case basePath + appConfig.parks.spinaVerde.marker: window.open(appConfig.parks.spinaVerde.url, '_blank');
+            case basePath + appConfig.parks.pineta.marker: window.open(appConfig.parks.pineta.url, '_blank');
+            case basePath + appConfig.parks.gole.marker: window.open(appConfig.parks.gole.url, '_blank');
+            case basePath + appConfig.parks.campo.marker: window.open(appConfig.parks.campo.url, '_blank');
+            case basePath + appConfig.parks.penz.marker: window.open(appConfig.parks.penz.url, '_blank');
+
 
         }
     });
