@@ -13,6 +13,7 @@ La principale dipendenza è ZoomMarker. Si tratta di un plugin di jQuery per ges
 | version  | date | detail        | 
 | :-------:|:----:|:-------------:|
 | 0.0.1    | 2021.10.02 | first version   |
+| 0.0.2    | 2021.11.06 | updated logo and images   |
 
 ## Require
 
