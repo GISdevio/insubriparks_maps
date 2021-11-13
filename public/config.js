@@ -32,7 +32,7 @@ var appConfig = {
             'fontSize': 'small'
         },
         'popup': {
-            'text': 'Clicca per visitare il sito del parco!'
+            'text': 'Clicca per scoprire il parco'
         }
     },
     'stazioni': {
