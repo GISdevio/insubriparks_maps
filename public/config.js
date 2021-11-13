@@ -29,42 +29,47 @@ var appConfig = {
         'style': {
             'color': 'white',
             'backgroundColor': 'green',
+            'fontSize': 'small'
+        },
+        'popup': {
+            'text': 'Clicca per visitare il sito del parco!'
         }
     },
     'stazioni': {
         'varese1': {
-            'nome': "Stazione Varese",
+            'nome': "Varese Nord",
             'marker': "stazione.png",
             'url': "https:test.com"
         },
         'varese2': {
-            'nome': "Stazione Varese 2",
+            'nome': "Varese FS",
             'marker': "stazione.png",
             'url': "https:test.com"
         },
         'gole': {
-            'nome': "Stazione Gole",
+            'nome': "Chiasso FFS",
             'marker': "stazione.png",
             'url': "https:test.com"
         },
         'como1': {
-            'nome': "Stazione Como",
+            'nome': "Como San Giovanni FS",
             'marker': "stazione.png",
             'url': "https:test.com"
         },
         'como2': {
-            'nome': "Stazione Como 2",
+            'nome': "Como Nord Lago",
             'marker': "stazione.png",
             'url': "https:test.com"
         },
         'pineta': {
-            'nome': "Stazione Pineta",
+            'nome': "Tradate FN",
             'marker': "stazione.png",
             'url': "https:test.com"
         },
         'style': {
             'color': 'white',
-            'backgroundColor': 'black'
+            'backgroundColor': 'black',
+            'fontSize': 'small'
         }
     },
     'aereoporti':{

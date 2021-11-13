@@ -42,7 +42,7 @@ body {
   z-index: 999;
   background-color: lightgray;
   display: none;
-  position: absolute;
+  max-width: 30%;
   padding: 10px;
   color: white;
   border-color: white;
@@ -55,7 +55,6 @@ body {
   opacity:0.4;
   filter:alpha(opacity=40);
 }
-
 
 
 .navbar {
