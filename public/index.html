@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>ZoomMarker_Demo</title>
 
-    <link rel="stylesheet" href="assets/css/zoom-marker.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <style>
     </style>
@@ -12,9 +12,10 @@
 </head>
 <body>
 
-<div id="zoom-marker-div" class="zoom-marker-div">
+<div id="zoom-marker-div" class="zoom-marker-div" style="margin: auto">
     <img class="zoom-marker-img" id="zoom-marker-img-alt" alt="zoom-marker-img-alt" name="zoom-marker-img-alt"  draggable="false"/>
 </div>
+
 
 </body>
 
@@ -32,7 +33,6 @@
         $('#zoom-marker-img-alt').zoomMarker({
             src: "assets/img/" + appConfig.basemapImage,
             rate: 0.2,
-            width: 600,
             max: 500,
             min: 500,
             enable_drag: false,
@@ -42,40 +42,40 @@
                 // ---------------------------- Parks Marker ------------------------------------------
                 {
                     src:"assets/img/" + appConfig.parks.pineta.marker,
-                    x:1850,
-                    y:1950,
+                    x:752,
+                    y:977,
                     size: 50,
 /*                    dialog:{
                         value: appConfig.parks.pineta.nome,
                         style: appConfig.parks.style
                     },*/
-                    draggable: false
+                    draggable: false,
                     //hint:{value:'M', style:{color:"green", left:"12px"}}
                 },                {
                     src:"assets/img/" + appConfig.parks.spinaVerde.marker,
-                    x:2350,
-                    y:1500,
+                    x:1008,
+                    y:753,
                     size: 50,
                     draggable: false
                     //hint:{value:'M', style:{color:"green", left:"12px"}}
                 },{
                     src:"assets/img/" + appConfig.parks.gole.marker,
-                    x:2400,
-                    y:1000,
+                    x:874,
+                    y:409,
                     size: 50,
                     draggable: false
                     //hint:{value:'M', style:{color:"green", left:"12px"}}
                 },{
                     src:"assets/img/" + appConfig.parks.campo.marker,
-                    x:1080,
-                    y:1200,
+                    x:350,
+                    y:585,
                     size: 50,
                     draggable: false
                     //hint:{value:'M', style:{color:"green", left:"12px"}}
                 },{
                     src:"assets/img/" + appConfig.parks.penz.marker,
-                    x:2000,
-                    y:1150,
+                    x:759,
+                    y:605,
                     size: 50,
                     draggable: false
                     //hint:{value:'M', style:{color:"green", left:"12px"}}
@@ -84,8 +84,8 @@
                 // ---------------------------- Railway Stations Marker ------------------------------------------
                 {
                     src:"assets/img/" + appConfig.stazioni.como1.marker,
-                    x:2809,
-                    y:1366,
+                    x:1141,
+                    y:705,
                     size: 18,
                     dialog:{
                         value: appConfig.stazioni.como1.nome,
@@ -96,8 +96,8 @@
                 },
                 {
                     src:"assets/img/" + appConfig.stazioni.como2.marker,
-                    x:2709,
-                    y:1406,
+                    x:1189,
+                    y:723,
                     size: 18,
                     dialog:{
                         value: appConfig.stazioni.como2.nome,
@@ -108,8 +108,8 @@
                 },
                 {
                     src:"assets/img/" + appConfig.stazioni.gole.marker,
-                    x:2219,
-                    y:1082,
+                    x:862,
+                    y:541,
                     size: 18,
                     dialog:{
                         value: appConfig.stazioni.gole.nome,
@@ -120,8 +120,8 @@
                 },
                 {
                     src:"assets/img/" + appConfig.stazioni.pineta.marker,
-                    x:1650,
-                    y:2030,
+                    x:605,
+                    y:1011,
                     size: 18,
                     dialog:{
                         value: appConfig.stazioni.pineta.nome,
@@ -132,8 +132,8 @@
                 },
                 {
                     src:"assets/img/" + appConfig.stazioni.varese1.marker,
-                    x:1349,
-                    y:1602,
+                    x:481,
+                    y:781,
                     size: 18,
                     dialog:{
                         value: appConfig.stazioni.varese1.nome,
@@ -144,8 +144,8 @@
                 },
                 {
                     src:"assets/img/" + appConfig.stazioni.varese2.marker,
-                    x:1269,
-                    y:1652,
+                    x:435,
+                    y:817,
                     size: 18,
                     dialog:{
                         value: appConfig.stazioni.varese2.nome,
@@ -156,7 +156,7 @@
                 },
 
                 // ---------------------------- Airports Marker ------------------------------------------
-                {
+/*                {
                     src:"assets/img/" + appConfig.aereoporti.lugano.marker,
                     x:1630,
                     y:378,
@@ -189,66 +189,46 @@
                     },
                     draggable: false
                     //hint:{value:'M', style:{color:"green", left:"12px"}}
-                },
+                },*/
 
                 // ---------------------------- Cities Marker ------------------------------------------
                 {
-                    src:"assets/img/" + appConfig.comuni.lugano.marker,
-                    x:1930,
-                    y:548,
-                    size: 100,
-                    dialog:{
-                        value: appConfig.comuni.lugano.nome,
-                        style: appConfig.comuni.style
-                    },
-                    draggable: false
+                    src:"assets/img/" + appConfig.comuni.chiasso.marker,
+                    x:928,
+                    y:491,
+                    size: 40,
+                    draggable: true
                     //hint:{value:'M', style:{color:"green", left:"12px"}}
                 },
                 {
                     src:"assets/img/" + appConfig.comuni.mendrisio.marker,
-                    x:2130,
-                    y:738,
+                    x:790,
+                    y:343,
                     size: 40,
-                    dialog:{
-                        value: appConfig.comuni.mendrisio.nome,
-                        style: appConfig.comuni.style
-                    },
                     draggable: false
                     //hint:{value:'M', style:{color:"green", left:"12px"}}
                 },
                 {
                     src:"assets/img/" + appConfig.comuni.como.marker,
-                    x:2930,
-                    y:1478,
+                    x:1194,
+                    y:683,
                     size: 40,
-                    dialog:{
-                        value: appConfig.comuni.como.nome,
-                        style: appConfig.comuni.style
-                    },
                     draggable: false
                     //hint:{value:'M', style:{color:"green", left:"12px"}}
                 },
                 {
                     src:"assets/img/" + appConfig.comuni.varese.marker,
-                    x:1289,
-                    y:1502,
+                    x:422,
+                    y:765,
                     size: 40,
-                    dialog:{
-                        value: appConfig.comuni.varese.nome,
-                        style: appConfig.comuni.style
-                    },
                     draggable: false
                     //hint:{value:'M', style:{color:"green", left:"12px"}}
                 },
                 {
                     src:"assets/img/" + appConfig.comuni.milano.marker,
-                    x:2509,
-                    y:2525,
-                    size: 100,
-                    dialog:{
-                        value: appConfig.comuni.milano.nome,
-                        style: appConfig.comuni.style
-                    },
+                    x:1004,
+                    y:1263,
+                    size: 40,
                     draggable: false
                     //hint:{value:'M', style:{color:"green", left:"12px"}}
                 }
@@ -256,6 +236,16 @@
             ]
         });
     })
+
+
+    setTimeout(function () {
+        $('#zoom-marker-img-alt11').css('cursor','default');
+        $('#zoom-marker-img-alt12').css('cursor','default');
+        $('#zoom-marker-img-alt13').css('cursor','default');
+        $('#zoom-marker-img-alt14').css('cursor','default');
+        $('#zoom-marker-img-alt15').css('cursor','default');
+    }, 1000);
+
 
     $('#zoom-marker-img-alt').on("zoom_marker_click", function(event, marker){
         let basePath = "assets/img/";
@@ -265,10 +255,14 @@
             case basePath + appConfig.parks.gole.marker: window.open(appConfig.parks.gole.url, '_blank');
             case basePath + appConfig.parks.campo.marker: window.open(appConfig.parks.campo.url, '_blank');
             case basePath + appConfig.parks.penz.marker: window.open(appConfig.parks.penz.url, '_blank');
-
-
         }
     });
+
+    // THIS FUNCTION JUST TO PLACE EASILY THE MARKERS
+/*    $('#zoom-marker-img-alt').on("zoom_marker_mouse_click", function(event, mouseObj){
+        console.log(mouseObj.x + " / " + mouseObj.y)
+    });*/
+
 
     /******************** INIT ZoomMarker here *****************************/
 

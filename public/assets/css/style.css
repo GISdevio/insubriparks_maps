@@ -1,0 +1,79 @@
+body {
+  margin: auto;
+  max-width: 1280px;
+  background-color: white;
+}
+
+.zoom-marker-div{
+  width:501px;
+  height:500px;
+  background-color:white;
+  border:2px solid black;
+  position:relative;
+}
+
+.zoom-marker-div-half{
+  width:100%;
+  margin:auto auto auto auto;
+  height:400px;
+  overflow:hidden;
+  position: relative;
+  background-color: white;
+}
+
+.zoom-marker-img{
+  position: absolute;
+  max-width: 100%;
+  max-height: 500px;
+  height: auto;
+}
+
+.zoom-marker{
+  z-index:2;
+  position: absolute;
+  cursor: pointer;
+}
+
+.zoom-marker span{
+  position: absolute;
+}
+
+.zoom-marker-hover-dialog{
+  z-index: 999;
+  background-color: lightgray;
+  display: none;
+  position: absolute;
+  padding: 10px;
+  color: white;
+  border-color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+}
+
+.zoom-marker-opacity{
+  opacity:0.4;
+  filter:alpha(opacity=40);
+}
+
+
+
+.navbar {
+  background-color: #313236;
+  border-radius: 2px;
+  max-width: 800px;
+}
+
+.navbar a {
+  color: #aaa;
+  display: inline-block;
+  font-size: 15px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: #ffffff;
+}
+
+

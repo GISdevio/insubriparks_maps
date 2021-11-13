@@ -88,7 +88,7 @@ var appConfig = {
     'comuni':{
         'milano':{
             'nome': "Milano",
-            'marker': 'freccia-milano.png'
+            'marker': 'centro-milano.png'
         },
         'mendrisio':{
             'nome': "Mendrisio",
@@ -102,9 +102,9 @@ var appConfig = {
             'nome': "Varese",
             'marker': 'centro-varese.png',
         },
-        'lugano':{
-            'nome': "Lugano",
-            'marker': 'freccia-lugano.png',
+        'chiasso':{
+            'nome': "Chiasso",
+            'marker': 'centro-chiasso.png',
         },
         "style":{
             'color': 'white',
