@@ -66,6 +66,11 @@ var appConfig = {
             'marker': "stazione.png",
             'url': "https:test.com"
         },
+        'mendrisio':{
+            'nome': "Mendrisio FFS",
+            'marker': "stazione.png",
+            'url': "https:test.com"
+        },
         'style': {
             'color': 'white',
             'backgroundColor': 'black',

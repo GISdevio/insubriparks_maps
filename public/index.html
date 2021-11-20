@@ -87,7 +87,7 @@
                 },{
                     src:"assets/img/" + appConfig.parks.penz.marker,
                     x:759,
-                    y:605,
+                    y:635,
                     size: 50,
                     dialog:{
                         value: appConfig.parks.popup.text,
@@ -170,6 +170,19 @@
                     draggable: false
                     //hint:{value:'M', style:{color:"green", left:"12px"}}
                 },
+                {
+                    src:"assets/img/" + appConfig.stazioni.mendrisio.marker,
+                    x:792,
+                    y:521,
+                    size: 18,
+                    dialog:{
+                        value: appConfig.stazioni.mendrisio.nome,
+                        style: appConfig.stazioni.style
+                    },
+                    draggable: false
+                    //hint:{value:'M', style:{color:"green", left:"12px"}}
+                },
+
 
                 // ---------------------------- Airports Marker ------------------------------------------
 /*                {
@@ -219,7 +232,7 @@
                 {
                     src:"assets/img/" + appConfig.comuni.mendrisio.marker,
                     x:790,
-                    y:493,
+                    y:483,
                     size: 40,
                     draggable: false
                     //hint:{value:'M', style:{color:"green", left:"12px"}}
@@ -244,7 +257,7 @@
                     src:"assets/img/" + appConfig.comuni.milano.marker,
                     x:1154,
                     y:1263,
-                    size: 40,
+                    size: 32,
                     draggable: false
                     //hint:{value:'M', style:{color:"green", left:"12px"}}
                 }
@@ -256,10 +269,23 @@
 
     setTimeout(function () {
         $('#zoom-marker-img-alt11').css('cursor','default');
+        $('#zoom-marker-img-alt11').css('z-index','982');
         $('#zoom-marker-img-alt12').css('cursor','default');
         $('#zoom-marker-img-alt13').css('cursor','default');
         $('#zoom-marker-img-alt14').css('cursor','default');
         $('#zoom-marker-img-alt15').css('cursor','default');
+        $('#zoom-marker-img-alt5').css('cursor','default');
+        $('#zoom-marker-img-alt5').css('z-index','982');
+        $('#zoom-marker-img-alt6').css('cursor','default');
+        $('#zoom-marker-img-alt6').css('z-index','982');
+        $('#zoom-marker-img-alt7').css('cursor','default');
+        $('#zoom-marker-img-alt7').css('z-index','982');
+        $('#zoom-marker-img-alt8').css('cursor','default');
+        $('#zoom-marker-img-alt8').css('z-index','982');
+        $('#zoom-marker-img-alt9').css('cursor','default');
+        $('#zoom-marker-img-alt9').css('z-index','982');
+        $('#zoom-marker-img-alt10').css('cursor','default');
+        $('#zoom-marker-img-alt10').css('z-index','982');
     }, 1000);
 
 
