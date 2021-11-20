@@ -1,7 +1,6 @@
 # What
 
-Creazione di una mappa statica (immagine/poster) in cui vengono caricati dei loghi/marker interattivi in modo tale da
-avere informazioni su quel punto dell'immagine che può essere un parco, un areoporto o una stazione. 
+Creazione di una mappa statica (immagine/poster) in cui vengono caricati dei loghi/marker interattivi.
 
 # Dependencies
 La principale dipendenza è ZoomMarker. Si tratta di un plugin di jQuery per gestire immagini e markers.
@@ -29,4 +28,4 @@ Nessuna particolare istruzione se non quella di utilizzare **index.html** in una
 si vuole integrare questa tipologia di mapping statico.
 
 Viene messo a disposizione un **config.js** all'interno del quale è possibile cambiare o aggiungere qualsiasi informazione 
-senza dover andare a riscrivere codice.
+senza dover riscrivere codice.
