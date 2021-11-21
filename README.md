@@ -28,8 +28,7 @@ La principale dipendenza è ZoomMarker. Si tratta di un plugin di jQuery per ges
 
 ## Usages
 
-Nessuna particolare istruzione se non quella di utilizzare il "div" container della mappa dichiarato in **index.html** in una qualsiasi altra Web Application dove
-si vuole integrare questa tipologia di mapping statico.
+Nessuna particolare istruzione se non quella di utilizzare il "div" container della mappa dichiarato in **index.html** in una qualsiasi altra Web Application dove si vuole integrare questa tipologia di mapping statico (ovviamente tutte le dipendenze css e js vanno importate come fatto nell'index.html).
 
 ```
 <div id="zoom-marker-div" class="zoom-marker-div" style="margin: auto">
