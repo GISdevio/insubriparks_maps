@@ -1,19 +1,17 @@
 # What
 
-Creazione di una mappa statica (immagine/poster) in cui vengono caricati dei loghi/marker interattivi in modo tale da
-avere informazioni su quel punto dell'immagine che può essere un parco, un areoporto o una stazione. 
+Creazione di una mappa dinamica basata sulle Maps Google API in cui vengono caricati due layer: aree Parco e Sentieri.
 
 # Dependencies
-La principale dipendenza è ZoomMarker. Si tratta di un plugin di jQuery per gestire immagini e markers.
-[ZoomMarker](https://github.com/NoticeVengus/ZoomMarker).
+L'unica dipendenza è la API Key delle Maps Google API. Questa può essere sostituita nel file index.html (quando viene
+importata la libreria maps google api.) 
 
 
 ## Version
 
 | version  | date | detail        | 
 | :-------:|:----:|:-------------:|
-| 0.0.1    | 2021.10.02 | first version   |
-| 0.0.2    | 2021.11.06 | updated logo and images   |
+| 0.0.1    | 2022.29.01 | first version   |
 
 ## Require
 
@@ -21,12 +19,18 @@ La principale dipendenza è ZoomMarker. Si tratta di un plugin di jQuery per ges
 | :-------:|:----:|:-------------:|
 | [jQuery](http://jquery.com/)   | 3.3.1  | DOM framework with JavaScript |
 | [jquery.mousewheel](http://plugins.jquery.com/mousewheel/)   | 1.6  | jQuery plugin for mouse wheel |
-| [Hammer.js](http://hammerjs.github.io/)| 2.0.4| multi touch plugin    |
+| [infoBox](https://cdn.jsdelivr.net/gh/googlemaps/v3-utility-library@master/archive/infobox/src/infobox.js)| 3.0.0| Label Plugin    |
+| [Maps Google API](https://maps.googleapis.com/maps/api/js)| 3.0.0| Maps Google API   |
 
 
 ## Usages
-Nessuna particolare istruzione se non quella di utilizzare **index.html** in una qualsiasi altra Web Application dove
-si vuole integrare questa tipologia di mapping statico.
+In questa demo viene proposta una soluzione per la visualizzazione di sentieri e area parco nello specifico per il parco
+Campo dei fiori. Quindi quanto presente nel file **index.js** va replicato per ciascuna mappa già presente sul sito di 
+riferimento. 
 
-Viene messo a disposizione un **config.js** all'interno del quale è possibile cambiare o aggiungere qualsiasi informazione 
-senza dover andare a riscrivere codice.
+Per ciascuna di queste mappe vanno modificati i seguenti riferimenti all'interno di **index.js**:
+mapId: id della Mappa all'interno del quale si vogliono aggiungere questi nuovi dati/funzionalità;
+parkAreaGeoJSONPath: relative path del GeoJSON dell' Area del Parco;
+sentieriGeoJSONPath: relative path del GeoJSON dei Sentieri. 
+
+
