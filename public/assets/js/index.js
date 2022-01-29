@@ -1,7 +1,7 @@
 let map;
 let mapId = "map";
-let parkAreaGeoJSONPath = "../aree_parco/Parco Campo dei Fiori.geojson";
-let sentieriGeoJSONPath = "../reti_sentieristiche/parco_campo dei fiori.geojson";
+let parkAreaGeoJSONPath = "aree_parco/Parco Campo dei Fiori.geojson";
+let sentieriGeoJSONPath = "reti_sentieristiche/parco_campo dei fiori.geojson";
 
 function initMap() {
     map = new google.maps.Map(document.getElementById(mapId), {
