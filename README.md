@@ -1,19 +1,17 @@
 # What
 
-Creazione di una mappa statica (immagine/poster) in cui vengono caricati dei loghi/marker interattivi in modo tale da
-avere informazioni su quel punto dell'immagine che può essere un parco, un areoporto o una stazione. 
+Crazione di una mappa dinamica per la rappresentazione dei punti di interesse (POI) sui sentieri dell'Insubriparks.
 
 # Dependencies
-La principale dipendenza è ZoomMarker. Si tratta di un plugin di jQuery per gestire immagini e markers.
-[ZoomMarker](https://github.com/NoticeVengus/ZoomMarker).
+L'unica dipendenza è la API Key delle Maps Google API. Questa può essere sostituita nel file index.html (quando viene
+importata la libreria maps google api.)
 
 
 ## Version
 
 | version  | date | detail        | 
 | :-------:|:----:|:-------------:|
-| 0.0.1    | 2021.10.02 | first version   |
-| 0.0.2    | 2021.11.06 | updated logo and images   |
+| 0.0.1    | 2021.01.31 | first version   |
 
 ## Require
 
@@ -21,12 +19,14 @@ La principale dipendenza è ZoomMarker. Si tratta di un plugin di jQuery per ges
 | :-------:|:----:|:-------------:|
 | [jQuery](http://jquery.com/)   | 3.3.1  | DOM framework with JavaScript |
 | [jquery.mousewheel](http://plugins.jquery.com/mousewheel/)   | 1.6  | jQuery plugin for mouse wheel |
-| [Hammer.js](http://hammerjs.github.io/)| 2.0.4| multi touch plugin    |
+| [bootstrap](https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js)| 5.0.0| Offcanvas Popup    |
+| [Maps Google API](https://maps.googleapis.com/maps/api/js)| 3.0.0| Maps Google API   |
 
 
 ## Usages
-Nessuna particolare istruzione se non quella di utilizzare **index.html** in una qualsiasi altra Web Application dove
-si vuole integrare questa tipologia di mapping statico.
+In questa demo viene proposta una soluzione per la visualizzazione dei POI dei Sentieri dell'Insubriparks.
+Quindi quanto presente nel file **index.js** va replicato per ciascuna mappa che si vuole creare, andando a cambiare il
+**temaAttivo** configurabile nell'index.js. 
 
-Viene messo a disposizione un **config.js** all'interno del quale è possibile cambiare o aggiungere qualsiasi informazione 
-senza dover andare a riscrivere codice.
+Nel caso in cui occorrano tutti i POIs senza divisione di tipologia, occorrerà configurare nell'index.js il parametro
+**mappaComplessiva** a True. In questo modo verranno visualizzati tutti i POI's
