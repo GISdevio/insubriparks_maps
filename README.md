@@ -11,7 +11,7 @@ importata la libreria maps google api.)
 
 | version  | date | detail        | 
 | :-------:|:----:|:-------------:|
-| 0.0.1    | 2022.29.01 | first version   |
+| 0.0.1    | 2022.01.29 | first version   |
 
 ## Require
 

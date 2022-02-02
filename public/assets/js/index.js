@@ -19,9 +19,15 @@ function initMap() {
     })
 
     var sentieri = new google.maps.Data({map: map});
+    sentieri.setStyle({
+        fillColor: 'red',
+        strokeColor: 'red',
+        strokeWeight: 3,
+    });
+
     var markers = [];
     var icon = {
-        scaledSize: new google.maps.Size(20, 20), // scaled size
+        scaledSize: new google.maps.Size(30, 30), // scaled size
         url: 'assets/img/white.png'
     }
     google.maps.event.addListener(map, 'zoom_changed', function(e) {
@@ -39,9 +45,13 @@ function initMap() {
         }
     });
 
+
     sentieri.addListener('addfeature', function(evt) {
-            const lat = evt.feature.getGeometry().getAt(0).getAt(0).lat();
-            const long = evt.feature.getGeometry().getAt(0).getAt(0).lng()
+            debugger;
+            var centroidindex = (evt.feature.g.g[0].getLength()) / 2;
+            centroidindex = Math.floor(centroidindex);
+            const lat = evt.feature.getGeometry().getAt(0).getAt(centroidindex).lat();
+            const long = evt.feature.getGeometry().getAt(0).getAt(centroidindex).lng()
             const myLatLng = { lat: lat, lng: long };
             var mapToAssign = "";
             map.zoom >= 12 ? mapToAssign = map : mapToAssign = null;
@@ -54,24 +64,27 @@ function initMap() {
             sentieri.setMap(mapToAssign);
             markers.push(marker);
 
-            //TODO: Cluster marker
     });
 
     sentieri.loadGeoJson(sentieriGeoJSONPath, null, function(){
         addDataLayerListeners(sentieri)
     });
 
-    sentieri.setStyle({
-        fillColor: 'red',
-        strokeColor: 'red',
-        strokeWeight: 3,
-    });
 
     function addDataLayerListeners(sentieri){
         sentieri.addListener('click', function(event){
+
+            sentieri.revertStyle();
+
             var feature = event.feature;
+            sentieri.overrideStyle(feature, {
+                fillColor: "white", strokeColor: "white"
+            });
+
             var html = "<b>"+feature.getProperty('nome');
-            html += "<br><a class='normal_link' target='_blank' href='"+feature.getProperty('info')+"'>Sito Web</a>";
+            if(feature.getProperty('info') !== '' && feature.getProperty('info')){
+                html += "<br><a class='normal_link' target='_blank' href='"+feature.getProperty('info')+"'>Dettagli</a>";
+            }
             infowindow.setContent(html);
             infowindow.setPosition(event.latLng);
             infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
