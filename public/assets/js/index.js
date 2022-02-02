@@ -1,5 +1,3 @@
-let mapId = "mapid";
-let poiGeoJSONPath = "poi/sample_POI.geojson";
 let history = "Abitare nella storia";
 let biodeversiy = "Biodiversità";
 let difesa = "Difesa del territorio";
@@ -9,7 +7,6 @@ let cielo = "Strati di terra e di cielo";
 let mappaComplessiva = true;
 let temaAttivo = history;
 
-let icon;
 
 /* Adds Open Street Map And Street, Satellite, Dark*/
 var attrib = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
