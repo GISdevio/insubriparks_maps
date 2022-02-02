@@ -20,7 +20,8 @@ importata la libreria maps google api.)
 | [jQuery](http://jquery.com/)   | 3.3.1  | DOM framework with JavaScript |
 | [jquery.mousewheel](http://plugins.jquery.com/mousewheel/)   | 1.6  | jQuery plugin for mouse wheel |
 | [bootstrap](https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js)| 5.0.0| Offcanvas Popup    |
-| [Maps Google API](https://maps.googleapis.com/maps/api/js)| 3.0.0| Maps Google API   |
+| [Leaflet JS](https://unpkg.com/leaflet@1.7.1/dist/leaflet.js)| 1.7| Leaflet JS   |
+| [Leaflet Legend JS](https://cdn.jsdelivr.net/gh/aazuspan/leaflet-feature-legend/src/feature-legend.js)| | Leaflet Legend JS   |
 
 
 ## Usages
@@ -29,4 +30,4 @@ Quindi quanto presente nel file **index.js** va replicato per ciascuna mappa che
 **temaAttivo** configurabile nell'index.js. 
 
 Nel caso in cui occorrano tutti i POIs senza divisione di tipologia, occorrerà configurare nell'index.js il parametro
-**mappaComplessiva** a True. In questo modo verranno visualizzati tutti i POI's
+**mappaComplessiva** a True. In questo modo verranno visualizzati tutti i POI's.
