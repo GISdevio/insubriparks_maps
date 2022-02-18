@@ -176,8 +176,8 @@ poiBio.on("click", function(pointObject){
 
 /*Defines The Basemap and OverlayMaps List*/
 var baseMaps = {
-    "OSM": OpenStreetMap_Mapnik,
     "Light": light,
+    "OSM": OpenStreetMap_Mapnik,
     "Satellite": satellite
 };
 var overlayMaps = {
@@ -258,6 +258,7 @@ function populatePopupLeftBar(feature){
     document.getElementById("placeImg").innerHTML = "";
     document.getElementById("titleInfo").innerText = feature.properties['NOME POI (Point of Interest)'];
     document.getElementById("contentInfo").innerText = feature.properties['Abstract'];
+    document.getElementById("textEnglish").innerText = "This caption will be in english and taken from dataset"; //TODO: Replace with feature.something
 
     var foto = feature.properties['Foto'];
     if(foto !== ''){
