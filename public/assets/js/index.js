@@ -118,6 +118,23 @@ function initMap() {
                 });
                 sentieri.setMap(mapToAssign);
                 markers.push(marker);
+                marker.addListener('click', function(event) {
+                    sentieri.revertStyle();
+
+                    var feature = evt.feature;
+                    sentieri.overrideStyle(feature, {
+                        fillColor: "#FF0404", strokeColor: "#FF0404", strokeWeight: 6,
+                    });
+
+                    var html = "<b>"+feature.getProperty('nome');
+                    if(feature.getProperty('info') !== '' && feature.getProperty('info')){
+                        html += "<br><a class='normal_link' target='_blank' href='"+feature.getProperty('info')+"'>Dettagli</a>";
+                    }
+                    infowindow.setContent(html);
+                    infowindow.setPosition(event.latLng);
+                    infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+                    infowindow.open(map);
+                });
             } else if(evt.feature.g){
                 var centroidindex = (evt.feature.g.g[0].getLength()) / 2;
                 centroidindex = Math.floor(centroidindex);
@@ -148,10 +165,28 @@ function initMap() {
                 });
                 sentieri.setMap(mapToAssign);
                 markers.push(marker);
+
+                marker.addListener('click', function() {
+                    sentieri.revertStyle();
+
+                    var feature = evt.feature;
+                    sentieri.overrideStyle(feature, {
+                        fillColor: "#FF0404", strokeColor: "#FF0404", strokeWeight: 6,
+                    });
+
+                    var html = "<b>"+feature.getProperty('nome');
+                    if(feature.getProperty('info') !== '' && feature.getProperty('info')){
+                        html += "<br><a class='normal_link' target='_blank' href='"+feature.getProperty('info')+"'>Dettagli</a>";
+                    }
+                    infowindow.setContent(html);
+                    infowindow.setPosition(event.latLng);
+                    infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+                    infowindow.open(map);
+                });
+
             }
+        });
 
-
-        }, {passive: true});
 
 
 
