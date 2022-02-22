@@ -21,20 +21,53 @@ function initMap() {
 
     var infowindow = new google.maps.InfoWindow();
 
-    createLayers(map, parkAreaCampo, sentieriCampo);
-    createLayers(map, parkAreaGole, sentieriGole);
-    createLayers(map, parkAreaPenz, sentieriPenz);
-    createLayers(map, parkAreaPineta, sentieriPineta);
-    createLayers(map, parkAreaSpina, sentieriSpina);
+    var parkArea = new google.maps.Data({map: map});
 
-    function createLayers(map, park, sentieriJson){
-        var parkArea = new google.maps.Data({map: map});
+    parkArea.loadGeoJson(parkAreaCampo);
+    parkArea.setStyle({
+        fillColor: 'green',
+        opacity: 0.6
+    })
 
-        parkArea.loadGeoJson(park);
-        parkArea.setStyle({
-            fillColor: 'green',
-            opacity: 0.6
-        })
+    var parkArea2 = new google.maps.Data({map: map});
+
+    parkArea2.loadGeoJson(parkAreaGole);
+    parkArea2.setStyle({
+        fillColor: 'green',
+        opacity: 0.6
+    })
+
+    var parkArea3 = new google.maps.Data({map: map});
+
+    parkArea3.loadGeoJson(parkAreaPenz);
+    parkArea3.setStyle({
+        fillColor: 'green',
+        opacity: 0.6
+    })
+
+    var parkArea4 = new google.maps.Data({map: map});
+
+    parkArea4.loadGeoJson(parkAreaPineta);
+    parkArea4.setStyle({
+        fillColor: 'green',
+        opacity: 0.6
+    })
+
+    var parkArea5 = new google.maps.Data({map: map});
+
+    parkArea5.loadGeoJson(parkAreaSpina);
+    parkArea5.setStyle({
+        fillColor: 'green',
+        opacity: 0.6
+    })
+
+    createLayers(map, parkArea, sentieriCampo);
+    createLayers(map, parkArea2, sentieriGole);
+    createLayers(map, parkArea3, sentieriPenz);
+    createLayers(map, parkArea4, sentieriPineta);
+    createLayers(map, parkArea5, sentieriSpina);
+
+    function createLayers(map, parkArea, sentieriJson){
 
         var sentieri = new google.maps.Data({map: map});
         sentieri.setStyle({
@@ -94,18 +127,6 @@ function initMap() {
                 const lat = evt.feature.getGeometry().getAt(0).getAt(centroidindex).lat();
                 const long = evt.feature.getGeometry().getAt(0).getAt(centroidindex).lng()
                 const myLatLng = { lat: lat, lng: long };
-                var mapToAssign = "";
-                var mapToAssignMarker = "";
-                if(map.zoom >= 12){
-                    mapToAssign = map
-                    mapToAssignMarker = null
-                    if(map.zoom >= 13){
-                        mapToAssignMarker = map
-                    }
-                }else{
-                    mapToAssign = null
-                    mapToAssignMarker = null
-                }
                 var marker = new google.maps.Marker({
                     position: myLatLng,
                     label: {
@@ -113,10 +134,9 @@ function initMap() {
                         color: "#FF0404",
                         className: "labels"
                     },
-                    icon: icon,
-                    map: mapToAssignMarker
+                    icon: icon
                 });
-                sentieri.setMap(mapToAssign);
+
                 markers.push(marker);
                 marker.addListener('click', function(event) {
                     sentieri.revertStyle();
@@ -141,18 +161,7 @@ function initMap() {
                 const lat = evt.feature.getGeometry().getAt(0).getAt(centroidindex).lat();
                 const long = evt.feature.getGeometry().getAt(0).getAt(centroidindex).lng()
                 const myLatLng = { lat: lat, lng: long };
-                var mapToAssign = "";
-                var mapToAssignMarker = "";
-                if(map.zoom >= 12){
-                    mapToAssign = map
-                    mapToAssignMarker = null
-                    if(map.zoom >= 13){
-                        mapToAssignMarker = map
-                    }
-                }else{
-                    mapToAssign = null
-                    mapToAssignMarker = null
-                }
+
                 var marker = new google.maps.Marker({
                     position: myLatLng,
                     label: {
@@ -160,10 +169,8 @@ function initMap() {
                         color: "#FF0404",
                         className: "labels"
                     },
-                    icon: icon,
-                    map: mapToAssignMarker
+                    icon: icon
                 });
-                sentieri.setMap(mapToAssign);
                 markers.push(marker);
 
                 marker.addListener('click', function() {
@@ -187,7 +194,24 @@ function initMap() {
             }
         });
 
+        var mapToAssign = "";
+        var mapToAssignMarker = "";
+        if(map.zoom >= 12){
+            mapToAssign = map
+            mapToAssignMarker = null
+            if(map.zoom >= 13){
+                mapToAssignMarker = map
+            }
+        }else{
+            mapToAssign = null
+            mapToAssignMarker = null
+        }
 
+        sentieri.setMap(mapToAssign);
+        for(var i = 0; i < markers.length; i++){
+            marker = markers[i]
+            marker.map = mapToAssignMarker
+        };
 
 
         sentieri.loadGeoJson(sentieriJson, null, function(){
