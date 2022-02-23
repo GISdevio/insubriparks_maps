@@ -1,4 +1,4 @@
-# insubriaparks_maps
+# insubriparks_maps
 
 Repository of web maps developed within the project INSUBRI.PARKS funded by the Interreg Co-operation Programme 2014 -2020 (ID 605472). Maps are published within sections of the online portal https://insubriparksturismo.eu.
 
