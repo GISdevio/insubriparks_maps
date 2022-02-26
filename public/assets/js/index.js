@@ -2,7 +2,7 @@ let map;
 let mapId = "map";
 
 let parkAreaCampo = "aree_parco/Parco Campo dei Fiori.geojson";
-let sentieriCampo = "reti_sentieristiche/parco_campo dei fiori.geojson";
+let sentieriCampo = "reti_sentieristiche/parco_campo_dei_fiori.geojson";
 let parkAreaGole = "aree_parco/Parco Gole della Breggia.geojson";
 let sentieriGole = "reti_sentieristiche/parco_gole della breggia.geojson";
 let parkAreaPenz = "aree_parco/Parco del Penz.geojson";
