@@ -4,9 +4,9 @@ Repository of web maps developed within the project INSUBRI.PARKS funded by the 
 
 Different maps are included in different branches of this repo.
 
-- [Infographic map](https://gitlab.com/geolab.como/insubriaparks_maps/-/tree/infografica) 
-- [Parks maps](https://gitlab.com/geolab.como/insubriaparks_maps/-/tree/mappe_parchi)
-- [Itineraries maps](https://gitlab.com/geolab.como/insubriaparks_maps/-/tree/mappe_itinerari)
+- [Infographic map](https://gitlab.com/geolab.como/insubriparks_maps/-/tree/infografica) 
+- [Parks maps](https://gitlab.com/geolab.como/insubriparks_maps/-/tree/mappe_parchi)
+- [Itineraries maps](https://gitlab.com/geolab.como/insubriparks_maps/-/tree/mappe_itinerari)
 
 
 ## Authors and acknowledgement
