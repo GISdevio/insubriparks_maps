@@ -1,20 +1,33 @@
-# insubriparks_maps
+# What
 
-Repository of web maps developed within the project INSUBRI.PARKS funded by the Interreg Co-operation Programme 2014 -2020 (ID 605472). Maps are published within sections of the online portal https://insubriparksturismo.eu.
+Crazione di una mappa dinamica per la rappresentazione dei punti di interesse (POI) sui sentieri dell'Insubriparks.
 
-Different maps are included in different branches of this repo.
-
-- [Infographic map](https://gitlab.com/geolab.como/insubriparks_maps/-/tree/infografica) 
-- [Parks maps](https://gitlab.com/geolab.como/insubriparks_maps/-/tree/mappe_parchi)
-- [Itineraries maps](https://gitlab.com/geolab.como/insubriparks_maps/-/tree/mappe_itinerari)
+# Dependencies
+L'unica dipendenza è la API Key delle Maps Google API. Questa può essere sostituita nel file index.html (quando viene
+importata la libreria maps google api.)
 
 
-## Authors and acknowledgement
-[GEOlab](http://www.geolab.polimi.it/) - Politecnico di Milano (contact: [Daniele Oxoli](mailto:daniele.oxoli@polimi.it))
+## Version
 
-Developed by [Matteo Rizzi](mailto:matteorizzi9300@gmail.com) 
+| version  | date | detail        | 
+| :-------:|:----:|:-------------:|
+| 0.0.1    | 2021.01.31 | first version   |
 
-## License
-For open source projects, say how it is licensed.
+## Require
+
+| name  | min-version | detail    |
+| :-------:|:----:|:-------------:|
+| [jQuery](http://jquery.com/)   | 3.3.1  | DOM framework with JavaScript |
+| [jquery.mousewheel](http://plugins.jquery.com/mousewheel/)   | 1.6  | jQuery plugin for mouse wheel |
+| [bootstrap](https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js)| 5.0.0| Offcanvas Popup    |
+| [Leaflet JS](https://unpkg.com/leaflet@1.7.1/dist/leaflet.js)| 1.7| Leaflet JS   |
+| [Leaflet Legend JS](https://cdn.jsdelivr.net/gh/aazuspan/leaflet-feature-legend/src/feature-legend.js)| | Leaflet Legend JS   |
 
 
+## Usages
+In questa demo viene proposta una soluzione per la visualizzazione dei POI dei Sentieri dell'Insubriparks.
+Quindi quanto presente nel file **index.js** va replicato per ciascuna mappa che si vuole creare, andando a cambiare il
+**temaAttivo** configurabile nell'index.js. 
+
+Nel caso in cui occorrano tutti i POIs senza divisione di tipologia, occorrerà configurare nell'index.js il parametro
+**mappaComplessiva** a True. In questo modo verranno visualizzati tutti i POI's.

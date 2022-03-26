@@ -1,0 +1,63 @@
+.history path {
+  fill:#F9B233;
+}
+.bio path {
+  fill: #95C11F;
+}
+.difesa path {
+  fill: #E94E1B;
+}
+.genio path {
+  fill: #312783;
+}
+.cielo path {
+  fill: #006633;
+}
+
+#mapid {
+  height: 100%;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Color underline layer switcher */
+.green {
+  text-decoration-line: underline;
+  text-decoration-color: green;
+}
+
+.red {
+  text-decoration-line: underline;
+  text-decoration-color: darkred;
+}
+
+.gold {
+  text-decoration-line: underline;
+  text-decoration-color: gold;
+}
+
+
+.deeppink {
+  text-decoration-line: underline;
+  text-decoration-color: purple;
+}
+
+.orange {
+  text-decoration-line: underline;
+  text-decoration-color: darkorange;
+}
+
+.blu {
+  text-decoration-line: underline ;
+  text-decoration-color: blue;
+}
+
+div > i {
+  margin-right: 10px;
+}
