@@ -19,6 +19,9 @@
     <script src="assets/js/jquery.mousewheel.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/aazuspan/leaflet-feature-legend/src/feature-legend.js"></script>
     <link href="https://cdn.jsdelivr.net/gh/aazuspan/leaflet-feature-legend/src/feature-legend.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/MarkerCluster.css">
+    <link rel="stylesheet" href="assets/css/MarkerCluster.Default.css">
+    <script src="assets/js/leaflet.markercluster.js"></script>
     <style>
     </style>
 
@@ -27,14 +30,14 @@
 <div id="mapid"></div>
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="titleInfo">Offcanvas</h5>
+        <h5 class="offcanvas-title" style="font-weight: bolder" id="titleInfo">Offcanvas</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
         <div id="contentInfo">
             Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
         </div>
-        <div id="placeImg" style="margin-top: 20px">
+        <div id="placeImg" style="margin-top: 20px; margin-bottom: 10px">
         </div>
         <i id="textEnglish"></i>
     </div>

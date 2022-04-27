@@ -1,17 +1,21 @@
-.history path {
-  fill:#F9B233;
+.history {
+  fill:#F9B233 !important;
 }
-.bio path {
-  fill: #95C11F;
+.bio {
+  fill: #95C11F !important;
 }
-.difesa path {
-  fill: #E94E1B;
+.difesa {
+  fill: #E94E1B !important;
 }
-.genio path {
-  fill: #312783;
+.genio {
+  fill: #312783 !important;
 }
-.cielo path {
-  fill: #006633;
+.cielo {
+  fill: #006633 !important;
+}
+
+.mulini{
+  fill: #009EE2 !important;
 }
 
 #mapid {
