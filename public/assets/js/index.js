@@ -549,7 +549,7 @@ var map = L.map("mapid", {
 });
 
 /* Adds The Control Button For Layers */
-L.control.layers(baseMaps, overlayMaps).addTo(map);
+L.control.layers(baseMaps).addTo(map);
 
 /* Show tooltip only at a certain zoom level*/
 /*    var tooltipThreshold = 15;
