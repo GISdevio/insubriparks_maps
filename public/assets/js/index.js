@@ -13,7 +13,7 @@ let parkAreaSpina = "aree_parco/Parco Spina Verde.geojson";
 let sentieriSpina = "reti_sentieristiche/parco_spina verde.geojson";
 
 
-function initMap() {
+function initMap(callback) {
     map = new google.maps.Map(document.getElementById(mapId), {
         center: { lat: 45.86784037556661, lng: 8.76262649612005 },
         zoom: 12,
@@ -121,7 +121,7 @@ function initMap() {
 
         sentieri.addListener('addfeature', function(evt) {
             // use h o g
-            if(evt.feature.h){
+            if(evt.feature.h.h && evt.feature.h.h[0]){
                 var centroidindex = (evt.feature.h.h[0].getLength()) / 2;
                 centroidindex = Math.floor(centroidindex);
                 const lat = evt.feature.getGeometry().getAt(0).getAt(centroidindex).lat();
@@ -173,7 +173,7 @@ function initMap() {
                 });
                 markers.push(marker);
 
-                marker.addListener('click', function() {
+                marker.addListener('click', function (event) {
                     sentieri.revertStyle();
 
                     var feature = evt.feature;
@@ -181,13 +181,14 @@ function initMap() {
                         fillColor: "#FF0404", strokeColor: "#FF0404", strokeWeight: 6,
                     });
 
-                    var html = "<b>"+feature.getProperty('nome');
-                    if(feature.getProperty('info') !== '' && feature.getProperty('info')){
-                        html += "<br><a class='normal_link' target='_blank' href='"+feature.getProperty('info')+"'>Dettagli</a>";
+                    var html = "<b>" + feature.getProperty('nome');
+                    if (feature.getProperty('info') !== '' && feature.getProperty('info')) {
+                        html += "<br><a class='normal_link' target='_blank' href='" + feature.getProperty('info') + "'>Dettagli</a>";
                     }
+
                     infowindow.setContent(html);
                     infowindow.setPosition(event.latLng);
-                    infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+                    infowindow.setOptions({pixelOffset: new google.maps.Size(0, -34)});
                     infowindow.open(map);
                 });
 
