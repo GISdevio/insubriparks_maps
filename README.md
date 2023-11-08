@@ -4,13 +4,13 @@ Repository of web maps developed within the project INSUBRI.PARKS funded by the 
 
 Different maps are included in different branches of this repo.
 
-- [Infographic map](https://gitlab.com/geolab.como/insubriparks_maps/-/tree/infografica) 
-- [Parks maps](https://gitlab.com/geolab.como/insubriparks_maps/-/tree/mappe_parchi)
-- [Itineraries maps](https://gitlab.com/geolab.como/insubriparks_maps/-/tree/mappe_itinerari)
+- [Infographic map](https://github.com/GISdevio/insubriparks_maps/tree/infografica) 
+- [Parks maps](https://github.com/GISdevio/insubriparks_maps/tree/mappe_parchi)
+- [Itineraries maps](https://github.com/GISdevio/insubriparks_maps/tree/mappe_itinerari)
 
 
 ## Authors and acknowledgement
-[GEOlab](http://www.geolab.polimi.it/) - Politecnico di Milano (contact: [Daniele Oxoli](mailto:daniele.oxoli@polimi.it))
+[GEOlab](http://www.geolab.polimi.it) - Politecnico di Milano (contact: [Daniele Oxoli](mailto:daniele.oxoli@polimi.it))
 
 Developed by [Matteo Rizzi](mailto:matteorizzi9300@gmail.com) 
 
