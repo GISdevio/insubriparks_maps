@@ -120,14 +120,10 @@ function initMap(callback) {
 
 
         sentieri.addListener('addfeature', function(evt) {
-            // use h o g
-            if(evt.feature.h.h && evt.feature.h.h[0]){
-                var centroidindex = (evt.feature.h.h[0].getLength()) / 2;
-                centroidindex = Math.floor(centroidindex);
-                const lat = evt.feature.getGeometry().getAt(0).getAt(centroidindex).lat();
-                const long = evt.feature.getGeometry().getAt(0).getAt(centroidindex).lng()
-                const myLatLng = { lat: lat, lng: long };
-                var marker = new google.maps.Marker({
+            var centroidindex, lat, long, myLatLng;
+
+            function createMarker() {
+                return new google.maps.Marker({
                     position: myLatLng,
                     label: {
                         text: evt.feature.getProperty("sentiero"),
@@ -136,64 +132,49 @@ function initMap(callback) {
                     },
                     icon: icon
                 });
-
-                markers.push(marker);
-                marker.addListener('click', function(event) {
-                    sentieri.revertStyle();
-
-                    var feature = evt.feature;
-                    sentieri.overrideStyle(feature, {
-                        fillColor: "#FF0404", strokeColor: "#FF0404", strokeWeight: 6,
-                    });
-
-                    var html = "<b>"+feature.getProperty('nome');
-                    if(feature.getProperty('info') !== '' && feature.getProperty('info')){
-                        html += "<br><a class='normal_link' target='_blank' href='"+feature.getProperty('info')+"'>Dettagli</a>";
-                    }
-                    infowindow.setContent(html);
-                    infowindow.setPosition(event.latLng);
-                    infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
-                    infowindow.open(map);
-                });
-            } else if(evt.feature.g){
-                var centroidindex = (evt.feature.g.g[0].getLength()) / 2;
-                centroidindex = Math.floor(centroidindex);
-                const lat = evt.feature.getGeometry().getAt(0).getAt(centroidindex).lat();
-                const long = evt.feature.getGeometry().getAt(0).getAt(centroidindex).lng()
-                const myLatLng = { lat: lat, lng: long };
-
-                var marker = new google.maps.Marker({
-                    position: myLatLng,
-                    label: {
-                        text: evt.feature.getProperty("sentiero"),
-                        color: "#FF0404",
-                        className: "labels"
-                    },
-                    icon: icon
-                });
-                markers.push(marker);
-
-                marker.addListener('click', function (event) {
-                    sentieri.revertStyle();
-
-                    var feature = evt.feature;
-                    sentieri.overrideStyle(feature, {
-                        fillColor: "#FF0404", strokeColor: "#FF0404", strokeWeight: 6,
-                    });
-
-                    var html = "<b>" + feature.getProperty('nome');
-                    if (feature.getProperty('info') !== '' && feature.getProperty('info')) {
-                        html += "<br><a class='normal_link' target='_blank' href='" + feature.getProperty('info') + "'>Dettagli</a>";
-                    }
-
-                    infowindow.setContent(html);
-                    infowindow.setPosition(event.latLng);
-                    infowindow.setOptions({pixelOffset: new google.maps.Size(0, -34)});
-                    infowindow.open(map);
-                });
-
             }
+
+            function handleMarkerClick(event) {
+                sentieri.revertStyle();
+
+                var feature = evt.feature;
+                sentieri.overrideStyle(feature, {
+                    fillColor: "#FF0404", strokeColor: "#FF0404", strokeWeight: 6,
+                });
+
+                var html = "<b>" + feature.getProperty('nome');
+                if (feature.getProperty('info') !== '' && feature.getProperty('info')) {
+                    html += "<br><a class='normal_link' target='_blank' href='" + feature.getProperty('info') + "'>Dettagli</a>";
+                }
+
+                infowindow.setContent(html);
+                infowindow.setPosition(event.latLng);
+                infowindow.setOptions({pixelOffset: new google.maps.Size(0, -34)});
+                infowindow.open(map);
+            }
+
+            if (evt.feature && evt.feature.getGeometry) {
+                var geometry = evt.feature.getGeometry();
+
+                centroidindex = Math.floor(evt.feature.Fg.Fg[0].getLength() / 2);
+
+                if (geometry && geometry.getAt && geometry.getAt(0) && geometry.getAt(0).getAt) {
+                    lat = geometry.getAt(0).getAt(centroidindex).lat();
+                    long = geometry.getAt(0).getAt(centroidindex).lng();
+                    myLatLng = { lat: lat, lng: long };
+
+                    var marker = createMarker();
+                    markers.push(marker);
+                    marker.addListener('click', handleMarkerClick);
+                } else {
+                    console.error("Invalid geometry structure");
+                }
+            } else {
+                console.error("Invalid feature or geometry object");
+            }
+
         });
+
 
         var mapToAssign = "";
         var mapToAssignMarker = "";
